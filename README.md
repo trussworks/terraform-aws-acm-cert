@@ -1,5 +1,6 @@
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-Creates a TLS certificate using AWS ACM for domains hosted on Route53. ACM certificate can also be attached to an ALB listener.
+Creates a TLS certificate using AWS ACM for domains hosted on Route53.
+The ACM certificate can also be attached to an ALB listener.
 
 Creates the following resources:
 
