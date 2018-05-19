@@ -1,6 +1,6 @@
 /**
  * Creates a TLS certificate using AWS ACM for domains hosted on Route53.
- # The ACM certificate can also be attached to an ALB listener.
+ * The ACM certificate can also be attached to an ALB listener.
  *
  * Creates the following resources:
  *
