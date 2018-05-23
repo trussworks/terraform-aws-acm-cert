@@ -53,4 +53,6 @@ resource "aws_lb_listener_certificate" "main" {
 
   listener_arn    = "${var.alb_listener_arn}"
   certificate_arn = "${aws_acm_certificate.main.arn}"
+
+  depends_on = ["aws_acm_certificate_validation.main"]
 }
