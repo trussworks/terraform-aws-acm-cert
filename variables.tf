@@ -18,3 +18,9 @@ variable "zone_name" {
   type        = "string"
   description = "The Route53 zone name for which the certificate should be verified and issued."
 }
+
+variable "caa_records" {
+  description = "Add CAA records to route53."
+  type        = "list"
+  default     = []
+}
