@@ -20,20 +20,20 @@ module "acm_cert" {
 }
 ```
 
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| alb_listener_arn | (Optional) Associate ACM certificate to and ALB listener. | string | `` | no |
-| domain_name | Domain name to associate with the ACM certificate. | string | - | yes |
+| alb\_listener\_arn | (Optional) Associate ACM certificate to and ALB listener. | string | `` | no |
+| caa\_records | Add CAA records to route53. | list | `[]` | no |
+| domain\_name | Domain name to associate with the ACM certificate. | string | - | yes |
 | environment | Environment tag. | string | - | yes |
-| zone_name | The Route53 zone name for which the certificate should be verified and issued. | string | - | yes |
+| zone\_name | The Route53 zone name for which the certificate should be verified and issued. | string | - | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| acm_arn | The ARN of the validated ACM certificate. |
+| acm\_arn | The ARN of the validated ACM certificate. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

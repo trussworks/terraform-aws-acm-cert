@@ -57,3 +57,13 @@ resource "aws_lb_listener_certificate" "main" {
 
   depends_on = ["aws_acm_certificate_validation.main"]
 }
+
+# https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting-caa.html
+resource "aws_route53_record" "caa" {
+  count   = "${length(var.caa_records) > 0 ? 1 : 0}"
+  zone_id = "${data.aws_route53_zone.main.id}"
+  name    = "${var.domain_name}"
+  type    = "CAA"
+  records = "${var.caa_records}"
+  ttl     = "60"
+}
