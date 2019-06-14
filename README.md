@@ -24,11 +24,11 @@ module "acm_cert" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| alb\_listener\_arn | (Optional) Associate ACM certificate to and ALB listener. | string | `` | no |
+| alb\_listener\_arn | (Optional) Associate ACM certificate to and ALB listener. | string | `""` | no |
 | caa\_records | Add CAA records to route53. | list | `[]` | no |
-| domain\_name | Domain name to associate with the ACM certificate. | string | - | yes |
-| environment | Environment tag. | string | - | yes |
-| zone\_name | The Route53 zone name for which the certificate should be verified and issued. | string | - | yes |
+| domain\_name | Domain name to associate with the ACM certificate. | string | n/a | yes |
+| environment | Environment tag. | string | n/a | yes |
+| zone\_name | The Route53 zone name for which the certificate should be verified and issued. | string | n/a | yes |
 
 ## Outputs
 
