@@ -14,7 +14,6 @@ Creates the following resources:
 module "acm_cert" {
   source = "../../modules/aws-acm-cert"
 
-  region           = "us-west-2"
   alb_listener_arn = "arn:aws:elasticloadbalancing:us-west-2:..."
   domain_name      = "www.example.com"
   zone_name        = "example.com"
@@ -29,7 +28,6 @@ module "acm_cert" {
 | caa\_records | Add CAA records to route53. | list | `[]` | no |
 | domain\_name | Domain name to associate with the ACM certificate. | string | n/a | yes |
 | environment | Environment tag. | string | n/a | yes |
-| region | Region where the AWS ACM Certificate will be created. | string | n/a | yes |
 | zone\_name | The Route53 zone name for which the certificate should be verified and issued. | string | n/a | yes |
 
 ## Outputs

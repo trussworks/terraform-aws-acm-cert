@@ -14,7 +14,6 @@
  * module "acm_cert" {
  *   source = "../../modules/aws-acm-cert"
  *
- *   region           = "us-west-2"
  *   alb_listener_arn = "arn:aws:elasticloadbalancing:us-west-2:..."
  *   domain_name      = "www.example.com"
  *   zone_name        = "example.com"
