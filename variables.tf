@@ -1,3 +1,8 @@
+variable "region" {
+  description = "Region where the AWS ACM Certificate will be created."
+  type        = "string"
+}
+
 variable "alb_listener_arn" {
   type        = "string"
   description = "(Optional) Associate ACM certificate to and ALB listener."
