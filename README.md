@@ -1,4 +1,3 @@
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 Creates a TLS certificate using AWS ACM for domains hosted on Route53.
 The ACM certificate can also be attached to an ALB listener.
 
@@ -7,6 +6,12 @@ Creates the following resources:
 * ACM certificate
 * Route53 record used to validate TLS certificate
 * Optional association with an ALB listener
+
+## Terraform Versions
+
+Terraform 0.12. Pin module version to ~> 2.0.0. Submit pull-requests to master branch.
+
+Terraform 0.11. Pin module version to ~> 1.2.0. Submit pull-requests to terraform011 branch.
 
 ## Usage
 
@@ -20,6 +25,7 @@ module "acm_cert" {
 }
 ```
 
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
 
 | Name | Description | Type | Default | Required |
