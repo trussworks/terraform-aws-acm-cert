@@ -24,3 +24,8 @@ variable "caa_records" {
   type        = "list"
   default     = []
 }
+
+variable "private_zone" {
+  description = "Used with name to filter for private hosted zones."
+  default = false
+}

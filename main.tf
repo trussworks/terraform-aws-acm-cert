@@ -23,6 +23,7 @@
 
 data "aws_route53_zone" "main" {
   name = "${var.zone_name}"
+  private_zone = "${var.private_zone}"
 }
 
 resource "aws_acm_certificate" "main" {
@@ -46,7 +47,7 @@ resource "aws_route53_record" "main" {
 
 resource "aws_acm_certificate_validation" "main" {
   certificate_arn         = "${aws_acm_certificate.main.arn}"
-  validation_record_fqdns = aws_route53_record.main.*.fqdn
+  validation_record_fqdns = ["${aws_route53_record.main.*.fqdn}"]
 }
 
 resource "aws_lb_listener_certificate" "main" {
