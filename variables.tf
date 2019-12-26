@@ -11,7 +11,7 @@ variable "domain_name" {
 
 variable "environment" {
   type        = string
-  description = "Environment tag."
+  description = "Environment tag. e.g. prod"
 }
 
 variable "zone_name" {

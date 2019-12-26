@@ -30,10 +30,10 @@ module "acm_cert" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| alb\_listener\_arn | (Optional) Associate ACM certificate to and ALB listener. | string | `""` | no |
-| caa\_records | Add CAA records to route53. | list | `[]` | no |
+| alb\_listener\_arn | \(Optional\) Associate ACM certificate to and ALB listener. | string | `""` | no |
+| caa\_records | Add CAA records to route53. | list(string) | `[]` | no |
 | domain\_name | Domain name to associate with the ACM certificate. | string | n/a | yes |
-| environment | Environment tag. | string | n/a | yes |
+| environment | Environment tag. e.g. prod | string | n/a | yes |
 | zone\_name | The Route53 zone name for which the certificate should be verified and issued. | string | n/a | yes |
 
 ## Outputs
@@ -43,3 +43,28 @@ module "acm_cert" {
 | acm\_arn | The ARN of the validated ACM certificate. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+## Developer Setup
+
+Install dependencies (macOS)
+
+```shell
+brew install pre-commit go terraform terraform-docs
+pre-commit install --install-hooks
+```
+
+### Testing
+
+[Terratest](https://github.com/gruntwork-io/terratest) is being used for
+automated testing with this module. Tests in the `test` folder can be run
+locally by running the following command:
+
+```shell
+make test
+```
+
+Or with aws-vault:
+
+```shell
+AWS_VAULT_KEYCHAIN_NAME=<NAME> aws-vault exec <PROFILE> -- make test
+```
