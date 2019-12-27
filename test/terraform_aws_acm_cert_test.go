@@ -19,11 +19,8 @@ func TestACMCertCreation(t *testing.T) {
 
 	testName := fmt.Sprintf("terratest-%s", strings.ToLower(random.UniqueId()))
 	awsRegion := "us-west-2"
-	zoneName := "truss.coffee"
 	domainName := "infra-test.truss.coffee"
 	acmDomain := fmt.Sprintf("%s.%s", testName, domainName)
-	//"${var.test_name}.${local.zone_name}"
-	//zoneName := "truss.coffee"
 
 	terraformOptions := &terraform.Options{
 		// The path to where our Terraform code is located
@@ -31,11 +28,8 @@ func TestACMCertCreation(t *testing.T) {
 
 		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{
-			"test_name":   testName,
-			"region":      awsRegion,
-			"domain_name": domainName,
-			"environment": testName,
-			"zone_name":   zoneName,
+			"test_name": testName,
+			"region":    awsRegion,
 		},
 
 		// Environment variables to set when running Terraform
