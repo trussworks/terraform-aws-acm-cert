@@ -19,8 +19,7 @@ func TestACMCertCreation(t *testing.T) {
 
 	testName := fmt.Sprintf("terratest-%s", strings.ToLower(random.UniqueId()))
 	awsRegion := "us-west-2"
-	domainName := "infra-test.truss.coffee"
-	acmDomain := fmt.Sprintf("%s.%s", testName, domainName)
+	acmDomain := fmt.Sprintf("%s.infra-test.truss.coffee", testName)
 
 	terraformOptions := &terraform.Options{
 		// The path to where our Terraform code is located
