@@ -27,15 +27,21 @@ module "acm_cert" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | n/a |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| alb\_listener\_arn | \(Optional\) Associate ACM certificate to and ALB listener. | string | `""` | no |
-| caa\_records | Add CAA records to route53. | list(string) | `[]` | no |
-| domain\_name | Domain name to associate with the ACM certificate. | string | n/a | yes |
-| environment | Environment tag. e.g. prod | string | n/a | yes |
-| zone\_name | The Route53 zone name for which the certificate should be verified and issued. | string | n/a | yes |
+|------|-------------|------|---------|:-----:|
+| alb\_listener\_arn | (Optional) Associate ACM certificate to and ALB listener. | `string` | `""` | no |
+| caa\_records | Add CAA records to route53. | `list(string)` | `[]` | no |
+| domain\_name | Domain name to associate with the ACM certificate. | `string` | n/a | yes |
+| environment | Environment tag. e.g. prod | `string` | n/a | yes |
+| zone\_name | The Route53 zone name for which the certificate should be verified and issued. | `string` | n/a | yes |
 
 ## Outputs
 
