@@ -1,26 +1,3 @@
-/**
- * Creates a TLS certificate using AWS ACM for domains hosted on Route53.
- * The ACM certificate can also be attached to an ALB listener.
- *
- * Creates the following resources:
- *
- * * ACM certificate
- * * Route53 record used to validate TLS certificate
- * * Optional association with an ALB listener
- *
- * ## Usage
- *
- * ```hcl
- * module "acm_cert" {
- *   source = "../../modules/aws-acm-cert"
- *
- *   alb_listener_arn = "arn:aws:elasticloadbalancing:us-west-2:..."
- *   domain_name      = "www.example.com"
- *   zone_name        = "example.com"
- * }
- * ```
- */
-
 data "aws_route53_zone" "main" {
   name = var.zone_name
 }
