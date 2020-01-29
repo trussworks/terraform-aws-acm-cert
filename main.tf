@@ -34,6 +34,10 @@ resource "aws_acm_certificate" "main" {
     Environment = "${var.environment}"
     Automation  = "Terraform"
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_route53_record" "main" {
