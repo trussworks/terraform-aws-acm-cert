@@ -27,16 +27,23 @@ module "acm_cert" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | ~> 0.12.0 |
+| aws | ~> 2.70 |
+
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| aws | ~> 2.70 |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | alb\_listener\_arn | (Optional) Associate ACM certificate to and ALB listener. | `string` | `""` | no |
 | caa\_records | Add CAA records to route53. | `list(string)` | `[]` | no |
 | domain\_name | Domain name to associate with the ACM certificate. | `string` | n/a | yes |
