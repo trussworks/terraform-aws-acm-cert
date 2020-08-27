@@ -3,14 +3,17 @@ The ACM certificate can also be attached to an ALB listener.
 
 Creates the following resources:
 
-* ACM certificate
-* Route53 record used to validate TLS certificate
-* Optional association with an ALB listener
+- ACM certificate
+- Route53 record used to validate TLS certificate
+- Optional association with an ALB listener
 
 ## Terraform Versions
 
-_This is how we're managing the different versions._
-Terraform 0.12. Pin module version to ~> 2.0. Submit pull-requests to master branch.
+\_This is how we're managing the different versions.
+
+Terraform 0.13. Pin module version to ~> 3.0. Submit pull-requests to master branch.
+\_
+Terraform 0.12. Pin module version to ~> 2.0. Submit pull-requests to terraform012 branch.
 
 Terraform 0.11. Pin module version to ~> 1.0. Submit pull-requests to terraform011 branch.
 
@@ -31,14 +34,14 @@ module "acm_cert" {
 
 | Name | Version |
 |------|---------|
-| terraform | ~> 0.12.0 |
-| aws | ~> 2.70 |
+| terraform | ~> 0.13.0 |
+| aws | ~> 3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | ~> 2.70 |
+| aws | ~> 3.0 |
 
 ## Inputs
 
