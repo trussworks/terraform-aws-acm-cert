@@ -3,14 +3,16 @@ The ACM certificate can also be attached to an ALB listener.
 
 Creates the following resources:
 
-* ACM certificate
-* Route53 record used to validate TLS certificate
-* Optional association with an ALB listener
+- ACM certificate
+- Route53 record used to validate TLS certificate
+- Optional association with an ALB listener
 
 ## Terraform Versions
 
-_This is how we're managing the different versions._
-Terraform 0.12. Pin module version to ~> 2.0. Submit pull-requests to master branch.
+_This is how we're managing the different versions.
+Terraform 0.13. Pin module version to ~> 3.0. Submit pull-requests to master branch.
+_
+Terraform 0.12. Pin module version to ~> 2.0. Submit pull-requests to tf12 branch.
 
 Terraform 0.11. Pin module version to ~> 1.0. Submit pull-requests to terraform011 branch.
 
@@ -27,34 +29,35 @@ module "acm_cert" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Requirements
 
-| Name | Version |
-|------|---------|
+| Name      | Version   |
+| --------- | --------- |
 | terraform | ~> 0.13.0 |
-| aws | ~> 3.0 |
+| aws       | ~> 3.0    |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
-| aws | ~> 3.0 |
+| ---- | ------- |
+| aws  | ~> 3.0  |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| alb\_listener\_arn | (Optional) Associate ACM certificate to and ALB listener. | `string` | `""` | no |
-| caa\_records | Add CAA records to route53. | `list(string)` | `[]` | no |
-| domain\_name | Domain name to associate with the ACM certificate. | `string` | n/a | yes |
-| environment | Environment tag. e.g. prod | `string` | n/a | yes |
-| zone\_name | The Route53 zone name for which the certificate should be verified and issued. | `string` | n/a | yes |
+| Name             | Description                                                                    | Type           | Default | Required |
+| ---------------- | ------------------------------------------------------------------------------ | -------------- | ------- | :------: |
+| alb_listener_arn | (Optional) Associate ACM certificate to and ALB listener.                      | `string`       | `""`    |    no    |
+| caa_records      | Add CAA records to route53.                                                    | `list(string)` | `[]`    |    no    |
+| domain_name      | Domain name to associate with the ACM certificate.                             | `string`       | n/a     |   yes    |
+| environment      | Environment tag. e.g. prod                                                     | `string`       | n/a     |   yes    |
+| zone_name        | The Route53 zone name for which the certificate should be verified and issued. | `string`       | n/a     |   yes    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| acm\_arn | The ARN of the validated ACM certificate. |
+| Name    | Description                               |
+| ------- | ----------------------------------------- |
+| acm_arn | The ARN of the validated ACM certificate. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
