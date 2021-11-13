@@ -3,6 +3,6 @@ module github.com/trussworks/terraform-aws-acm-cert
 go 1.13
 
 require (
-	github.com/gruntwork-io/terratest v0.38.2
+	github.com/gruntwork-io/terratest v0.38.4
 	github.com/stretchr/testify v1.7.0
 )
