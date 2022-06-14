@@ -64,6 +64,7 @@ No modules.
 | <a name="input_caa_records"></a> [caa\_records](#input\_caa\_records) | Add CAA records to route53. | `list(string)` | `[]` | no |
 | <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | Domain name to associate with the ACM certificate. | `string` | n/a | yes |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment tag. e.g. prod | `string` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags to be attached to the ACM certificate. | `list(string)` | `[]` | no |
 | <a name="input_zone_name"></a> [zone\_name](#input\_zone\_name) | The Route53 zone name for which the certificate should be verified and issued. | `string` | n/a | yes |
 
 ## Outputs
