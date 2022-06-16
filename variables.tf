@@ -25,3 +25,8 @@ variable "caa_records" {
   default     = []
 }
 
+variable "tags" {
+  description = "Tags to be attached to the ACM certificate."
+  type        = map(string)
+  default     = {}
+}
