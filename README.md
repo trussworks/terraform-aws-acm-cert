@@ -7,14 +7,6 @@ Creates the following resources:
 - Route53 record used to validate TLS certificate
 - Optional association with an ALB listener
 
-## Terraform Versions
-
-\_This is how we're managing the different versions.
-
-Terraform 0.13. Pin module version to ~> 3.0. Submit pull-requests to master branch.
-\_
-Terraform 0.12. Pin module version to ~> 2.0. Submit pull-requests to terraform012 branch.
-
 ## Usage
 
 ```hcl
