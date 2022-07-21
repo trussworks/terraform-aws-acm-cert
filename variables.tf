@@ -1,6 +1,6 @@
 variable "alb_listener_arn" {
   type        = string
-  description = "(Optional) Associate ACM certificate to and ALB listener."
+  description = "(Optional) Associate ACM certificate to an ALB listener."
   default     = ""
 }
 
