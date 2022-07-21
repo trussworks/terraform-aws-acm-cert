@@ -11,7 +11,7 @@ Creates the following resources:
 
 ```hcl
 module "acm_cert" {
-  source  = "trussworks/acm-cert/aws"
+  source = "trussworks/acm-cert/aws"
 
   alb_listener_arn = "arn:aws:elasticloadbalancing:us-west-2:..."
   domain_name      = "www.example.com"
