@@ -9,5 +9,5 @@ on:
       - main
 
 jobs:
-  validate:
+  terratest:
     uses: trussworks/shared-actions/.github/workflows/terratest.yml@create-terratest-workflow
