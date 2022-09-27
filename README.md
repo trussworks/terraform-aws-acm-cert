@@ -7,19 +7,11 @@ Creates the following resources:
 - Route53 record used to validate TLS certificate
 - Optional association with an ALB listener
 
-## Terraform Versions
-
-\_This is how we're managing the different versions.
-
-Terraform 0.13. Pin module version to ~> 3.0. Submit pull-requests to master branch.
-\_
-Terraform 0.12. Pin module version to ~> 2.0. Submit pull-requests to terraform012 branch.
-
 ## Usage
 
 ```hcl
 module "acm_cert" {
-  source = "../../modules/aws-acm-cert"
+  source = "trussworks/acm-cert/aws"
 
   alb_listener_arn = "arn:aws:elasticloadbalancing:us-west-2:..."
   domain_name      = "www.example.com"
@@ -60,7 +52,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_alb_listener_arn"></a> [alb\_listener\_arn](#input\_alb\_listener\_arn) | (Optional) Associate ACM certificate to and ALB listener. | `string` | `""` | no |
+| <a name="input_alb_listener_arn"></a> [alb\_listener\_arn](#input\_alb\_listener\_arn) | Associate ACM certificate to an ALB listener. | `string` | `""` | no |
 | <a name="input_caa_records"></a> [caa\_records](#input\_caa\_records) | Add CAA records to route53. | `list(string)` | `[]` | no |
 | <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | Domain name to associate with the ACM certificate. | `string` | n/a | yes |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment tag. e.g. prod | `string` | n/a | yes |
