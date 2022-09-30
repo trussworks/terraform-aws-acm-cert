@@ -21,7 +21,7 @@ jobs:
         run: |
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew install terraform-docs
-          pip install pre-commit
+          brew install pre-commit
       - name: Restore Pre-Commit Cache
         uses: actions/cache@v3
         with:
