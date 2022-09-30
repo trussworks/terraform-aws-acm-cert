@@ -17,6 +17,16 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
+      - name: Install pre-commit
+        run: |
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          brew install terraform-docs
+          pip install pre-commit
+      - name: Restore Precommit Cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit-dot-cache-{{ hashFiles(.pre-commit-config.yaml') }}
       - name: Restore Go Cache
         uses: actions/cache@v3
         with:
