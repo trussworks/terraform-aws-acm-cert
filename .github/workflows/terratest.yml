@@ -22,6 +22,8 @@ jobs:
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew install terraform-docs
           brew install pre-commit
+      - name: Set up Go
+        uses: actions/setup-go@v3
       - name: Restore Pre-Commit Cache
         uses: actions/cache@v3
         with:
@@ -38,9 +40,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: us-west-2
         run: |
-          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           temp_role=$(aws sts assume-role --role-arn arn:aws:iam::313564602749:role/circleci --role-session-name circleci)
           export AWS_ACCESS_KEY_ID=$(echo $temp_role | jq .Credentials.AccessKeyId | xargs)
           export AWS_SECRET_ACCESS_KEY=$(echo $temp_role | jq .Credentials.SecretAccessKey | xargs)
           export AWS_SESSION_TOKEN=$(echo $temp_role | jq .Credentials.SessionToken | xargs)
-          make test
+          go test -count 1 -v -timeout 90m ./test/...
