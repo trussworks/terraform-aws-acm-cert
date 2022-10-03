@@ -18,7 +18,7 @@ repos:
       - id: markdownlint
 
   - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.72.1
+    rev: v1.75.0
     hooks:
       - id: terraform_docs
       - id: terraform_fmt
@@ -27,4 +27,4 @@ repos:
     rev: v1.46.2
     hooks:
       - id: golangci-lint
-        args: [--timeout=3m]
+        args: [--timeout=2m]
