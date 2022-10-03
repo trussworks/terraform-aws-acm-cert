@@ -10,5 +10,5 @@ on:
 
 jobs:
   terratest:
-    uses: trussworks/shared-actions/.github/workflows/terratest.yml@create-terratest-workflow
+    uses: trussworks/shared-actions/.github/workflows/terratest.yml@main
     secrets: inherit
