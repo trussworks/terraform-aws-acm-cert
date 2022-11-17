@@ -51,4 +51,3 @@ resource "aws_route53_record" "caa" {
   records = var.caa_records
   ttl     = "60"
 }
-

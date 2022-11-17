@@ -10,4 +10,3 @@ module "acm-cert" {
   environment = local.environment
   zone_name   = local.zone_name
 }
-

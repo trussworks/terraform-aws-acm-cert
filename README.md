@@ -24,14 +24,14 @@ module "acm_cert" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0 |
+| terraform | >= 0.13.0 |
+| aws | >= 3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.0 |
+| aws | >= 3.0 |
 
 ## Modules
 
@@ -52,18 +52,18 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_alb_listener_arn"></a> [alb\_listener\_arn](#input\_alb\_listener\_arn) | Associate ACM certificate to an ALB listener. | `string` | `""` | no |
-| <a name="input_caa_records"></a> [caa\_records](#input\_caa\_records) | Add CAA records to route53. | `list(string)` | `[]` | no |
-| <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | Domain name to associate with the ACM certificate. | `string` | n/a | yes |
-| <a name="input_environment"></a> [environment](#input\_environment) | Environment tag. e.g. prod | `string` | n/a | yes |
-| <a name="input_tags"></a> [tags](#input\_tags) | Tags to be attached to the ACM certificate. | `map(string)` | `{}` | no |
-| <a name="input_zone_name"></a> [zone\_name](#input\_zone\_name) | The Route53 zone name for which the certificate should be verified and issued. | `string` | n/a | yes |
+| alb\_listener\_arn | Associate ACM certificate to an ALB listener. | `string` | `""` | no |
+| caa\_records | Add CAA records to route53. | `list(string)` | `[]` | no |
+| domain\_name | Domain name to associate with the ACM certificate. | `string` | n/a | yes |
+| environment | Environment tag. e.g. prod | `string` | n/a | yes |
+| tags | Tags to be attached to the ACM certificate. | `map(string)` | `{}` | no |
+| zone\_name | The Route53 zone name for which the certificate should be verified and issued. | `string` | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_acm_arn"></a> [acm\_arn](#output\_acm\_arn) | The ARN of the validated ACM certificate. |
+| acm\_arn | The ARN of the validated ACM certificate. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Developer Setup
