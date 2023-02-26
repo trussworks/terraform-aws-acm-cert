@@ -19,7 +19,7 @@ module "acm_cert" {
 }
 ```
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -64,7 +64,7 @@ No modules.
 | Name | Description |
 |------|-------------|
 | acm\_arn | The ARN of the validated ACM certificate. |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
 
 ## Developer Setup
 
