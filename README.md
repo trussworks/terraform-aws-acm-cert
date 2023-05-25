@@ -24,14 +24,14 @@ module "acm_cert" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.13.0 |
-| aws | >= 3.0 |
+| terraform | >= 1.4.0, < 2.0.0 |
+| aws | >= 4.3.5, < 5.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | >= 3.0 |
+| aws | 4.67.0 |
 
 ## Modules
 
