@@ -1,7 +1,3 @@
-data "aws_route53_zone" "main" {
-  name = var.zone_name
-}
-
 resource "aws_acm_certificate" "main" {
   domain_name       = var.domain_name
   validation_method = "DNS"
@@ -21,7 +17,7 @@ resource "aws_route53_record" "main" {
       type   = dvo.resource_record_type
     }
   }
-  zone_id = data.aws_route53_zone.main.id
+  zone_id = var.zone_id
   ttl     = "60"
   name    = each.value.name
   type    = each.value.type
@@ -45,7 +41,7 @@ resource "aws_lb_listener_certificate" "main" {
 # https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting-caa.html
 resource "aws_route53_record" "caa" {
   count   = length(var.caa_records) > 0 ? 1 : 0
-  zone_id = data.aws_route53_zone.main.id
+  zone_id = var.zone_id
   name    = var.domain_name
   type    = "CAA"
   records = var.caa_records
