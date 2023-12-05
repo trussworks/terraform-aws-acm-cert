@@ -14,9 +14,9 @@ variable "environment" {
   description = "Environment tag. e.g. prod"
 }
 
-variable "zone_name" {
+variable "zone_id" {
   type        = string
-  description = "The Route53 zone name for which the certificate should be verified and issued."
+  description = "The Route53 zone id for which the certificate should be verified and issued."
 }
 
 variable "caa_records" {
