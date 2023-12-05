@@ -46,7 +46,6 @@ No modules.
 | [aws_lb_listener_certificate.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_listener_certificate) | resource |
 | [aws_route53_record.caa](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
 | [aws_route53_record.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
-| [aws_route53_zone.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/route53_zone) | data source |
 
 ## Inputs
 
@@ -57,7 +56,7 @@ No modules.
 | domain\_name | Domain name to associate with the ACM certificate. | `string` | n/a | yes |
 | environment | Environment tag. e.g. prod | `string` | n/a | yes |
 | tags | Tags to be attached to the ACM certificate. | `map(string)` | `{}` | no |
-| zone\_name | The Route53 zone name for which the certificate should be verified and issued. | `string` | n/a | yes |
+| zone\_id | The Route53 zone id for which the certificate should be verified and issued. | `string` | n/a | yes |
 
 ## Outputs
 
