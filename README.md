@@ -16,6 +16,7 @@ module "acm_cert" {
   alb_listener_arn = "arn:aws:elasticloadbalancing:us-west-2:..."
   domain_name      = "www.example.com"
   zone_name        = "example.com"
+  zone_id          = "ABCDEFGHIGJLK1234"
 }
 ```
 
