@@ -15,17 +15,6 @@ variable "domain_name" {
   description = "Domain name to associate with the ACM certificate."
 }
 
-variable "environment" {
-  type        = string
-  description = "Environment tag. e.g. prod"
-}
-
-variable "tags" {
-  description = "Tags to be attached to the ACM certificate."
-  type        = map(string)
-  default     = {}
-}
-
 variable "zone_id" {
   type        = string
   description = "The Route53 zone id for which the certificate should be verified and issued."
