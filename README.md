@@ -48,11 +48,9 @@ module "acm_cert" {
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | domain_name | Domain name to associate with the ACM certificate. | `string` | n/a | yes |
-| environment | Environment tag. e.g. prod | `string` | n/a | yes |
 | zone_id | The Route53 zone id for which the certificate should be verified and issued. | `string` | n/a | yes |
 | alb_listener_arn | Associate ACM certificate to an ALB listener. | `string` | `""` | no |
 | caa_records | Add CAA records to route53. | `list(string)` | `[]` | no |
-| tags | Tags to be attached to the ACM certificate. | `map(string)` | `{}` | no |
 
 ## Outputs
 
